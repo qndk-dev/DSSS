@@ -1,14 +1,18 @@
-import { Client, EmbedBuilder, Events, Guild } from 'discord.js'
+import { Client, EmbedBuilder, Events, Guild } from 'discord.js';
+import Database from '../database/database.js';
 
 export default {
     name: Events.GuildCreate,
     once: false,
     async execute(guild: Guild) {
-    console.log(`Бот присоеденился к ньюв серверу: ${guild.name}`);
-    
-    const channel = guild.channels.cache.find(
-        channel => channel.isTextBased() && guild.members.me && channel.permissionsFor(guild.members.me).has('SendMessages')
-    );
+        console.log(`Bot has joined a new server: ${guild.name}`);
+        
+        const db = await Database.getInstance();
+        await db.updateGuildSettings(guild.id, {});
+        
+        const channel = guild.channels.cache.find(
+            channel => channel.isTextBased() && guild.members.me && channel.permissionsFor(guild.members.me).has('SendMessages')
+        );
 
     if (channel && channel.isTextBased()) {
         const embed = new EmbedBuilder()

@@ -25,3 +25,4 @@ logs
 *.env
 server/.env
 server/node_modules
+server/src/database/data.db

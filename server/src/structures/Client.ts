@@ -1,11 +1,11 @@
 import { Client, Collection, GatewayIntentBits } from 'discord.js';
 import { Command } from '../interfaces/Command.js';
-import { Logger } from '../utils/Logger.js';
+import Logger from '../services/logs.js'; // Изменено на новый логгер
 
 export class ExtendedClient extends Client {
     public commands: Collection<string, Command>;
     public cooldowns: Collection<string, Collection<string, number>>;
-    public logger: Logger;
+    public logger: typeof Logger;
 
     constructor() {
         super({
@@ -23,7 +23,7 @@ export class ExtendedClient extends Client {
 
         this.commands = new Collection();
         this.cooldowns = new Collection();
-        this.logger = new Logger();
+        this.logger = Logger;
     }
 
     public async init() {
