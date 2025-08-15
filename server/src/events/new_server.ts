@@ -41,7 +41,9 @@ export default {
                 {
                     name: '🔗 Полезные ссылки',
                     value: '[🌐 Веб-панель](https://dsss.qndk.fun)\n' +
-                           '[📖 Документация](https://dsss.qndk.fun/docs)',
+                           '[<:docs:1405904616906031146> Документация](https://dsss.qndk.fun/docs)\n' +
+                           '[<:github:1405903444442747051> Открытый исходный код](<https://github.com/qndk-dev/DSSS>)\n' +
+                           '[<:key:1307046322825728122> Поддержка](https://dsss.qndk.fun/support)',
                     inline: true
                 }
             )
