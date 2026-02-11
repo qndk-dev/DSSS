@@ -12,12 +12,14 @@ const event: Event = {
     console.log("╔════════════════════════════════════════╗");
     console.log("║                DSSS Bot                ║");
     console.log("╚════════════════════════════════════════╝");
-    console.log(`Бот: ${client.user?.tag}`);
+    console.log(`Hello world!`);
+    console.log(`Bot: ${client.user?.tag}`);
     console.log(`ID: ${client.user?.id}`);
-    console.log(`Серверов: ${guilds}`);
-    console.log(`Пользователей: ${users}`);
+    console.log(`Guilds: ${guilds}`);
+    console.log(`Servers: ${users}`);
+    console.log("══════════════════════════════════════════");
     client.user?.setPresence({
-      activities: [{ name: `/help | ${guilds} серверов`, type: 2 }],
+      activities: [{ name: `/help | ${guilds} servers`, type: 2 }],
       status: "online",
     });
   },
